@@ -1,8 +1,10 @@
+puzzle = "string";
 const fs = require('node:fs');
-fs.readFile('read.txt', 'utf8', (err, data) => {
-  if (err) {
+try {
+    const data = fs.readFileSync('read.txt', 'utf8');
+    puzzle = data;
+} catch (err) {
     console.error(err);
-    return;
-  }
-  console.log(data);
-});
+}
+
+console.log(puzzle);
