@@ -1,23 +1,34 @@
+import { isValidSudoku } from './check.js';
+import { readFileSync } from 'fs';
 
-puzzle = "";
-
-//gets puzzle from txt file
-const fs = require('node:fs');
-try {
-    const data = fs.readFileSync('read.txt', 'utf8');
-
-    //put puzzle in string
-    puzzle = data;
-} catch (err) {
-    console.error(err);
+for(let i = 0; i < 9; i++) {
+    for(let j = 0; j < 9; j++) {
+        console.log(0);
+    }
+    console.log("\n");
 }
 
-//console.log(puzzle);
+function checkIfCorrect() {
+    let puzzle = "";
 
-const og = puzzle
-    .trim()
-    .split('\n')
-    .map(row => row.trim().split('').map(Number));
+    //gets puzzle from txt file
 
-//og = parseInt(puzzle);
-console.log(og);
+    try {
+        const data = readFileSync('read.txt', 'utf8');
+
+        //put puzzle in string
+        puzzle = data;
+    } catch (err) {
+        console.error(err);
+    }
+
+    //gets puzzle and turns it into a 2D int arr
+
+    const og = puzzle
+        .trim()
+        .split('\n')
+        .map(row => row.trim().split('').map(Number));
+
+    return isValidSudoku(og);
+}
+
