@@ -1,12 +1,19 @@
 import { isValidSudoku } from './check.js';
 import { readFileSync } from 'fs';
-
+for (let i = 0; i < 9; i++) {
+    let row = [];
+    for (let j = 0; j < 9; j++) {
+        row += 0;
+    }
+    console.log(row.trim());
+}
+/*
 for(let i = 0; i < 9; i++) {
     for(let j = 0; j < 9; j++) {
-        console.log(0);
+        console.log("0");
     }
     console.log("\n");
-}
+}*/
 
 function checkIfCorrect() {
     let puzzle = "";
