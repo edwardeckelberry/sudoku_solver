@@ -14,9 +14,10 @@ try {
 
 //console.log(puzzle);
 
-const og = puzzle.map(row =>
-        row.map(str => Number(str)) // 10 specifies base 10 (decimal)
-    );
+const og = puzzle
+    .trim()
+    .split('\n')
+    .map(row => row.trim().split('').map(Number));
 
 //og = parseInt(puzzle);
 console.log(og);
