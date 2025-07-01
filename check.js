@@ -2,10 +2,6 @@
 export function isValidSudoku(board) {
     let temp = board[0];
     let firstThree = temp.slice(0, 3);
-
-    //i = 1 to skip the first row
-    for (let i = 1; i < 9; i++) {
-        
-    }
+    
     return firstThree === temp.slice(0, 3);
 }
