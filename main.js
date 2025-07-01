@@ -26,21 +26,21 @@ const temp = [og[0].splice(0, 3), og[1].splice(0, 3), og[2].splice(0, 3)];
 
 //this is to compare top left 3x3 square and first row
 //if one of each number is in both arrays, then return true, else false
-function checkTopLeftSquareAndFirstRow(arr) {
+function chicken(arr) {
     let repNum = 0;
     //console.log(temp.length * 3);
     for (let i = 0; i < arr.length * 3 ; i++) {
         let findNum = og[i][repNum]
-        console.log(findNum);
+        //console.log(findNum);
         for(let j = 0; j <= arr.length; j++) {
             if( j === arr.length) {
                 return false;
             }
             if( arr[j].includes(findNum)) {
-                console.log("found");
+                //console.log("found");
                 break;
             } else {
-                console.log("not found");
+                //console.log("not found");
                 continue;
             }
         }
