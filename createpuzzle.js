@@ -2,8 +2,14 @@ export function createPuzzle(grid) {
     for(let i = 0; i < 9; i++) {
         const row = [];
         for(let j = 0; j < 9; j++){
-            row.push(Math.floor(Math.random() * 10));
-                
+            const num = row.push(Math.floor(Math.random() * 10));
+            if(checkPuzzle(grid,i,j,num)){
+                continue;
+            }
+            else{
+                //add logic so that if num is taken,
+                //repeat random until it gets a valid num
+            }
         }
         grid.push(row);
     }
