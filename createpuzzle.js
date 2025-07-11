@@ -13,8 +13,24 @@ export function createPuzzle(grid) {
 export function checkPuzzle(grid, r, c, k) {
     if(k != grid[r]){
         for(let i = 0; i < 9; i++){
-            if(k != grid[i][c]) continue;
+            if(k != grid[i][c]){
+                continue;
+            }
+            else{
+                break;
+            }
         }
-        
+        for(let j = r / 3 * 3; j < r / 3 * 3 + 3; j++){
+            for(let l = c / 3 * 3; l < c / 3 * 3 + 3; l++){
+                if(k != grid[i][c]){
+                continue;
+            }
+            else{
+                break;
+            }
+            }
+        }
+        return true;
     }
+    return false;
 }
