@@ -7,8 +7,7 @@ export function createPuzzle(grid) {
                 continue;
             }
             else{
-                //add logic so that if num is taken,
-                //repeat random until it gets a valid num
+                j -= j;
             }
         }
         grid.push(row);
